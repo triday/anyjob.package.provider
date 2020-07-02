@@ -9,8 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AnyJob.Package.Rest.Api\AnyJob.Package.Rest.Api.csproj" />
     <ProjectReference Include="..\AnyJob.Package.Impl.FileSystem\AnyJob.Package.Impl.FileSystem.csproj" />
+    <ProjectReference Include="..\AnyJob.Package.Rest.Api\AnyJob.Package.Rest.Api.csproj" />
   </ItemGroup>
 
 </Project>
