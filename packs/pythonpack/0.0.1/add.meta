@@ -1,0 +1,18 @@
+﻿{
+    "enabled": true,
+    "description": "add from python",
+    "entrypoint": "add.py",
+    "kind": "python",
+    "inputs": {
+        "num1": {
+            "type": "number",
+            "must": true
+        },
+        "num2": {
+            "type": "number"
+        }
+    },
+    "output": {
+        "type": "number"
+    }
+}
