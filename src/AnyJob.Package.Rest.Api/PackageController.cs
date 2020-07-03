@@ -35,9 +35,9 @@ namespace AnyJob.Package.Rest.Api
             return this.Delegater.ListPackages();
         }
         [HttpPost]
-        public Task UploadPackage(Stream zipStream)
+        public Task UploadPackage(PackageVersionContentInfo contentInfo)
         {
-            return this.Delegater.UploadPackage(zipStream);
+            return this.Delegater.UploadPackage(contentInfo);
         }
     }
 }
