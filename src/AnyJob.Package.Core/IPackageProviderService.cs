@@ -16,7 +16,7 @@ namespace AnyJob.Package.Core
         Task UploadPackage(PackageVersionContentInfo contentInfo);
 
     }
-    public class PackageVersionContentInfo:PackageVersionInfo
+    public class PackageVersionContentInfo : PackageVersionInfo
     {
         public string Name { get; set; }
         public Stream ZipStream { get; set; }
@@ -53,7 +53,7 @@ namespace AnyJob.Package.Core
 
         public object Output { get; set; }
 
-       
+
     }
 
 
