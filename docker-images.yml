@@ -1,6 +1,8 @@
 version: '3.3'
 
 services:
-  # wait-compose-ready:
-  #   build: tool/YS.Knife.Wait.Compose.Ready
-  #   image: ysknife/wait-compose-ready:${IMAGE_TAG:-latest}
+  file-provider:
+    build:
+      context: .
+      dockerfile: src/AnyJob.Package.App/Dockerfile
+    image: anyjob/anyjob-file-provider:latest

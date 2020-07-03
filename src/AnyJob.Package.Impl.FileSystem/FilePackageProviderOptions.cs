@@ -8,6 +8,6 @@ namespace AnyJob.Package.Impl.FileSystem
     public class FilePackageProviderOptions
     {
         public string RootDir { get; set; } = "/anyjob/packs";
-        public string BaseUrl { get; set; } = "http://localhost:9595";
+        public string UrlFormat { get; set; } = "/{0}";
     }
 }

@@ -43,7 +43,8 @@ namespace AnyJob.Package.Impl.FileSystem
         }
         private string CombinUrl(string package, string version, string rpath)
         {
-            return Path.Combine(filePackageProviderOptions.BaseUrl, package, version, rpath).Replace('\\', '/');
+            var path = Path.Combine(package, version, rpath).Replace('\\', '/');
+            return string.Format(filePackageProviderOptions.UrlFormat, path);
 
         }
         private IEnumerable<string> GetAllValidVersions(string packageRootDir)
