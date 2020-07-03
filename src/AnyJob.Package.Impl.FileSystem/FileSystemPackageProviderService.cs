@@ -5,7 +5,6 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.Tasks;
-using AnyJob.Package.Core;
 using Microsoft.Extensions.DependencyInjection;
 using YS.Knife;
 
@@ -122,7 +121,9 @@ namespace AnyJob.Package.Impl.FileSystem
             return Task.FromResult(files.ToList());
         }
 
-        public Task UploadPackage(Stream zipStream)
+      
+
+        public Task UploadPackage(PackageVersionContentInfo contentInfo)
         {
             throw new NotImplementedException();
         }

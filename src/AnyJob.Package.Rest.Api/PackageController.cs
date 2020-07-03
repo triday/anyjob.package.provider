@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using AnyJob.Package.Core;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnyJob.Package.Rest.Api

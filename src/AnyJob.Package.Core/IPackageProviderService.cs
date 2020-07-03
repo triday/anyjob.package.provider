@@ -5,7 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnyJob.Package.Core
+namespace AnyJob.Package
 {
     public interface IPackageProviderService
     {
