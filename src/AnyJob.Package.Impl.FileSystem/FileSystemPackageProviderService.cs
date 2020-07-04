@@ -26,7 +26,7 @@ namespace AnyJob.Package.Impl.FileSystem
 #pragma warning restore CA1801 // 检查未使用的参数
         {
             return Version.TryParse(version, out _);
-           
+
         }
         private PackageVersionInfo GetPackageVersionInfo(string packageDir, string version)
         {
