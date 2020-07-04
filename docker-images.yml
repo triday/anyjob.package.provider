@@ -1,8 +1,13 @@
 version: '3.3'
 
 services:
-  file-provider:
+  file-provider-latest:
     build:
       context: .
       dockerfile: src/AnyJob.Package.App/Dockerfile
     image: anyjob/anyjob-file-provider:latest
+  file-provider-version:
+    build:
+      context: .
+      dockerfile: src/AnyJob.Package.App/Dockerfile
+    image: anyjob/anyjob-file-provider:${IMAGE_VERSION}
