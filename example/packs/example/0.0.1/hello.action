@@ -1,0 +1,6 @@
+﻿{
+    "enabled": true,
+    "description": "hello world action",
+    "entrypoint": "hello.py",
+    "kind": "python"
+}
