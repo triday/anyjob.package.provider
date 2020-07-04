@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -20,9 +21,12 @@ namespace AnyJob.Package.Impl.FileSystem
         {
             this.filePackageProviderOptions = filePackageProviderOptions;
         }
+#pragma warning disable CA1801 // 检查未使用的参数
         private bool IsValidVersionDir(string packageDir, string version)
+#pragma warning restore CA1801 // 检查未使用的参数
         {
             return Version.TryParse(version, out _);
+           
         }
         private PackageVersionInfo GetPackageVersionInfo(string packageDir, string version)
         {
@@ -44,7 +48,7 @@ namespace AnyJob.Package.Impl.FileSystem
         private string CombinUrl(string package, string version, string rpath)
         {
             var path = Path.Combine(package, version, rpath).Replace('\\', '/');
-            return string.Format(filePackageProviderOptions.UrlFormat, path);
+            return string.Format(CultureInfo.InvariantCulture, filePackageProviderOptions.UrlFormat, path);
 
         }
         private IEnumerable<string> GetAllValidVersions(string packageRootDir)
@@ -64,7 +68,7 @@ namespace AnyJob.Package.Impl.FileSystem
                 using (var stream = new FileStream(path, FileMode.Open))
                 {
                     var bytes = hash.ComputeHash(stream);
-                    return BitConverter.ToString(bytes).Replace("-", "");
+                    return string.Join("", bytes.Select(p => p.ToString("X2", CultureInfo.InvariantCulture)).ToArray());
                 }
             }
 

@@ -12,7 +12,7 @@ using YS.Knife.Hosting;
 
 namespace AnyJob.Package.App
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
