@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="YS.Knife.Rest.Client" Version="1.2.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AnyJob.Package.Core\AnyJob.Package.Core.csproj" />
+  </ItemGroup>
+</Project>

@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyJob.Package.Impl.FileSys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyJob.Package.Rest.Api", "src\AnyJob.Package.Rest.Api\AnyJob.Package.Rest.Api.csproj", "{A0466B1A-4AB3-4155-9E98-8E19703B5F01}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnyJob.Package.Impl.Rest.Client", "src\AnyJob.Package.Impl.Rest.Client\AnyJob.Package.Impl.Rest.Client.csproj", "{6E212478-62EF-429C-B6C2-D386A86DA484}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A0466B1A-4AB3-4155-9E98-8E19703B5F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0466B1A-4AB3-4155-9E98-8E19703B5F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0466B1A-4AB3-4155-9E98-8E19703B5F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E212478-62EF-429C-B6C2-D386A86DA484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E212478-62EF-429C-B6C2-D386A86DA484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E212478-62EF-429C-B6C2-D386A86DA484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E212478-62EF-429C-B6C2-D386A86DA484}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
