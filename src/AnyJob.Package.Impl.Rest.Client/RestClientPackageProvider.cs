@@ -20,7 +20,7 @@ namespace AnyJob.Package.Impl.Rest.Client
                     new RestApiInfo
                     {
                         Method = HttpMethod.Get,
-                        Path = "{packageName}/{version}/actions",
+                        Path = "packages/{packageName}/{version}/actions",
                         Arguments = new List<RestArgument>
                         {
                             new RestArgument("packageName", ArgumentSource.FromRouter, packageName),
@@ -36,7 +36,7 @@ namespace AnyJob.Package.Impl.Rest.Client
                      new RestApiInfo
                      {
                          Method = HttpMethod.Get,
-                         Path = "{packageName}/versions/latest",
+                         Path = "packages/{packageName}/versions/latest",
                          Arguments = new List<RestArgument>
                          {
                             new RestArgument("packageName", ArgumentSource.FromRouter, packageName),
@@ -51,7 +51,7 @@ namespace AnyJob.Package.Impl.Rest.Client
                      new RestApiInfo
                      {
                          Method = HttpMethod.Get,
-                         Path = "{packageName}/{version}/files",
+                         Path = "packages/{packageName}/{version}/files",
                          Arguments = new List<RestArgument>
                          {
                             new RestArgument("packageName", ArgumentSource.FromRouter, packageName),
@@ -67,7 +67,7 @@ namespace AnyJob.Package.Impl.Rest.Client
                     new RestApiInfo
                     {
                         Method = HttpMethod.Get,
-                        Path = "all",
+                        Path = "packages/all",
                         Arguments = new List<RestArgument>
                         {
                         }

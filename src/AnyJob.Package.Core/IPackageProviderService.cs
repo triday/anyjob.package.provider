@@ -19,7 +19,7 @@ namespace AnyJob.Package
     public class PackageVersionContentInfo : PackageVersionInfo
     {
         public string Name { get; set; }
-        public Stream ZipStream { get; set; }
+        public virtual Stream ZipStream { get; set; }
     }
 
     public class PackageVersionInfo

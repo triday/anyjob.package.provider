@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AnyJob.Package.Rest.Api
@@ -38,5 +39,11 @@ namespace AnyJob.Package.Rest.Api
         {
             return this.Delegater.UploadPackage(contentInfo);
         }
+
+
+    }
+    public class PackageVersionContentInfoEx : PackageVersionContentInfo
+    {
+        public IFormFile PackageZipFile { get; set; }
     }
 }

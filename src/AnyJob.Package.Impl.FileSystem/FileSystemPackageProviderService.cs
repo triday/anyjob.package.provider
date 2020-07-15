@@ -76,7 +76,7 @@ namespace AnyJob.Package.Impl.FileSystem
         public Task<List<ActionInfo>> GetActions(string packageName, string version)
         {
             var versionDir = Path.Combine(filePackageProviderOptions.RootDir, packageName, version);
-            var actions = from p in Directory.GetFiles(versionDir, "*.meta", SearchOption.TopDirectoryOnly)
+            var actions = from p in Directory.GetFiles(versionDir, "*.action", SearchOption.TopDirectoryOnly)
                           select JsonSerializer.Deserialize<ActionInfo>(File.ReadAllText(p), JsonSerializerOptions);
             return Task.FromResult(actions.ToList());
         }

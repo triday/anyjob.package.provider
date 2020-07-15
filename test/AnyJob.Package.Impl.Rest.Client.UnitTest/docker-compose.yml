@@ -1,0 +1,14 @@
+﻿version: '3.3'
+
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: src/AnyJob.Package.App/Dockerfile
+    ports:
+      - "8080:80"
+  wait-compose-ready:
+    image: ysknife/wait-compose-ready
+    environment:
+      REPORT_TO_HOST_PORT: ${REPORT_TO_HOST_PORT:-8901}
+      WAIT_HOSTS: app:80
