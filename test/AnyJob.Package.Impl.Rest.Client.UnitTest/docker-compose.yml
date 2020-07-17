@@ -6,7 +6,10 @@ services:
       context: ../..
       dockerfile: src/AnyJob.Package.App/Dockerfile
     ports:
-      - "8080:80"
+      - "${SERVICE_PORT:-8080}:80"
+    volumes:
+      - ../../example/packs:/anyjob/packs
+
   wait-compose-ready:
     image: ysknife/wait-compose-ready
     environment:

@@ -1,7 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using YS.Knife.Test;
 
-namespace YS.Sequence.Impl.EFCore.SqlServer
+namespace AnyJob.Package.Impl.Rest.Client.UnitTest
 {
     [TestClass]
     public class TestEnvironment
@@ -9,7 +11,8 @@ namespace YS.Sequence.Impl.EFCore.SqlServer
         [AssemblyInitialize()]
         public static void Setup(TestContext _)
         {
-            StartContainer();
+            var port = Utility.GetAvailableTcpPort(8080);
+            StartContainer(port);
         }
 
         [AssemblyCleanup()]
@@ -18,9 +21,13 @@ namespace YS.Sequence.Impl.EFCore.SqlServer
             DockerCompose.Down();
         }
 
-        private static void StartContainer()
+        private static void StartContainer(uint port)
         {
-            DockerCompose.Up();
+            DockerCompose.Up(new Dictionary<string, object>
+            {
+                ["SERVICE_PORT"] = port
+            });
+            Environment.SetEnvironmentVariable("ApiServices__Services__PackageService__BaseAddress", $"http://localhost:{port}");
         }
 
 

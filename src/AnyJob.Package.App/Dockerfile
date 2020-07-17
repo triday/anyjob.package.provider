@@ -15,6 +15,6 @@ RUN dotnet publish "src/AnyJob.Package.App" -f netcoreapp3.1 -c Release -o /app/
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY example/packs /anyjob/packs
+RUN mkdir -p /anyjob/packs
 
 ENTRYPOINT ["dotnet", "AnyJob.Package.App.dll"]
