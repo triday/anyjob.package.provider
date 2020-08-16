@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using YS.Knife;
 
 namespace AnyJob.Package.Impl.FileSystem
@@ -30,6 +31,7 @@ namespace AnyJob.Package.Impl.FileSystem
         }
         private PackageVersionInfo GetPackageVersionInfo(string packageDir, string version)
         {
+            IFileProvider fileProvider;
             var packageFile = Path.Combine(packageDir, version, "pack.json");
             if (File.Exists(packageFile))
             {
@@ -114,6 +116,7 @@ namespace AnyJob.Package.Impl.FileSystem
 
             var files = from p in Directory.GetFiles(versionDir, "*", SearchOption.AllDirectories)
                         let rpath = p.Substring(versionDir.Length + 1)
+                        where !HasDot(rpath)
                         select new PackageFileInfo
                         {
                             Path = rpath,
@@ -125,7 +128,10 @@ namespace AnyJob.Package.Impl.FileSystem
 
             return Task.FromResult(files.ToList());
         }
-
+        private bool HasDot(string path)
+        {
+            return path.Split(System.IO.Path.DirectorySeparatorChar).Any(p => p.StartsWith(".", StringComparison.InvariantCultureIgnoreCase));
+        }
 
 
         public Task UploadPackage(PackageVersionContentInfo contentInfo)

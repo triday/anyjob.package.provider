@@ -12,8 +12,10 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "FileProvider__RootDir": "E:\\Repos\\anyjob.package.provider\\packs",
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "Knife__StaticFiles__/files__FolderPath": "E:\\Repos\\anyjob\\example\\packs",
+        "FileProvider__RootDir": "E:\\Repos\\anyjob\\example\\packs",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Knife__StaticFiles__/files__EnableDirectoryBrowsing": "true"
       }
     },
     "AnyJob.Package.App": {

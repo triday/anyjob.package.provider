@@ -1,4 +1,5 @@
-﻿using YS.Knife.Hosting;
+﻿using Microsoft.Extensions.FileProviders;
+using YS.Knife.Hosting;
 
 namespace AnyJob.Package.App
 {
