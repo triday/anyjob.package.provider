@@ -2,7 +2,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="YS.Knife.Aop" Version="1.2.8" />
+    <PackageReference Include="YS.Knife.Aop" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
