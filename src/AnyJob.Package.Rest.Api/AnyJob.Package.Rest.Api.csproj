@@ -2,7 +2,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="YS.Knife.Rest.Api" Version="1.2.8" />
+    <PackageReference Include="YS.Knife.Rest.Api" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
